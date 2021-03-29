@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="9b9865a5-4391-4a21-83d0-2e730710cece" name="gb-laravel">
+        <fileTransfer rootFolder="/var/www/a.chelnokov/gb-laravel.pic66.ru" accessType="SFTP" host="213.189.217.251" port="22" sshConfigId="9fb99c8e-85f0-49c0-bcf2-3c9235a44015" sshConfig="root@213.189.217.251:22 agent" authAgent="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
