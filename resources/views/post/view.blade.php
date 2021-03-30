@@ -1,4 +1,4 @@
-@extends('layouts.basic')
+@extends('layouts.basic', ['title' => 'Просмотр поста'])
 
 @section('sidebar')
     @parent

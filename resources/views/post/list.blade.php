@@ -1,11 +1,11 @@
-
-@extends('layouts.basic')
+@extends('layouts.basic', ['title' => 'Список постов'])
 
 @section('sidebar')
-  @parent
+    @parent
 
 @stop
 
 @section('content')
-  <p><pre><?=print_r($posts,1)?></pre></p>
+    <p>
+    <pre><?=print_r($posts, 1)?></pre></p>
 @stop

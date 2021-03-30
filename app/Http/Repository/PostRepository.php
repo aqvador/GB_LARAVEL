@@ -11,6 +11,7 @@ use App\Models\Posts\Posts;
 
 class PostRepository implements PostsRepository
 {
+    private const START_INDEX = 1;
 
     public function findById(int $id): ?ItemPost
     {
@@ -20,12 +21,12 @@ class PostRepository implements PostsRepository
             'Description Post'
         );
 
-        return rand(0, 1) ? $item : null;
+        return mt_rand(0, 1) ? $item : null;
     }
 
     public function fundByTitle(string $title): ?Posts
     {
-        return $this->generatePosts($title, rand(1, rand(1, 50)));
+        return $this->generatePosts($title, mt_rand(self::START_INDEX, mt_rand(self::START_INDEX, 50)));
     }
 
     public function lastPosts(int $lastPosts): ?Posts
@@ -33,14 +34,15 @@ class PostRepository implements PostsRepository
         return $this->generatePosts('Search last Post', $lastPosts);
     }
 
-    private function generatePosts(string $title, int $limit)
+    private function generatePosts(string $title, int $limit): ?Posts
     {
-        $fill = array_fill(1, $limit, $title);
+        $fill = array_fill(self::START_INDEX, $limit, $title);
 
+        $items = [];
         foreach ($fill as $key => $v) {
             $items[] = new ItemPost($key, sprintf('%s +  %s', $title, $key), sprintf('%s + %s', 'Description', $key));
         }
 
-        return new Posts(...$items);
+        return !empty($items) ? new Posts(...$items) : null;
     }
 }

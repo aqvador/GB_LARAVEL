@@ -13,8 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', fn() => view('users/welcome'));
-Route::get('/about', fn() => view('about'));
+Route::get('/', fn() => view('users/welcome', ['title' => 'Главная страница']));
+Route::get('/about', fn() => view('about', ['title' => 'О нас']));
 
 
 Route::get('posts/{id}', '\App\Http\Controllers\PostsController@view');
