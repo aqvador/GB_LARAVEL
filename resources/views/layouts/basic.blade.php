@@ -397,10 +397,10 @@
 <div
     class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
     <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-        <a href="{{ url('/') }}" class="text-xs text-gray-700 underline">Главная</a>
-        <a href="{{ url('/posts/' . mt_rand(1,1000)) }}" class="text-xssm text-gray-900 underline">1 пост (рандомно)</a>
-        <a href="{{ url('/posts/list/' . mt_rand(1,1000)) }}" class="text-xs text-gray-700 underline">10 постов</a>
-        <a href="{{ url('/posts/list/' . mt_rand(1,1000))  }}" class="text-xs text-gray-700 underline">50 постов</a>
+        <a href="{{ url('/') }}" class="text-xs text-gray-700 underline">Главная</a> |
+        <a href="{{ url('/posts/' . mt_rand(1,1000)) }}" class="text-xssm text-gray-900 underline">1 пост</a> |
+        <a href="{{ url('/posts/list/10') }}" class="text-xs text-gray-700 underline">10 постов</a> |
+        <a href="{{ url('/posts/list/50')  }}" class="text-xs text-gray-700 underline">50 постов</a> |
         <a href="{{ url('/about') }}" class="text-xs text-gray-700 underline">О нас</a>
     </div>
 
