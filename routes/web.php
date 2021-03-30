@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', fn() => view('users/welcome'));
+Route::get('/about', fn() => view('about'));
+
+
+Route::get('posts/{id}', '\App\Http\Controllers\PostsController@view');
+Route::get('posts/list/{limit?}', '\App\Http\Controllers\PostsController@list');
