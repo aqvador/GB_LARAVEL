@@ -1,10 +1,13 @@
 <?php
+declare(strict_types=1);
 
 namespace App\Providers;
 
-use Illuminate\Support\ServiceProvider;
 
-class AppServiceProvider extends ServiceProvider
+use App\Http\Contracts\PostsRepository;
+use App\Http\Repository\PostRepository;
+
+class ContainerDependencyInjection extends \Illuminate\Support\ServiceProvider
 {
     /**
      * Register any application services.
@@ -13,7 +16,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
 
     }
 
@@ -24,6 +26,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $this->app->bind(PostsRepository::class, PostRepository::class);
     }
 }
